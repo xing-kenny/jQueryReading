@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSDN</title>
+<!-- 
+http://blog.csdn.net/a569171010/article/details/7517548
+ -->
+</head>
+<body>
+	<div id="dv" class = "pool1">
+	</div> 
+	<div id="ev" class = "pool1">
+	</div> 
+	<div id="fv" class = "pool1">
+	</div> 
+</body>
+<script type="text/javascript">
+	// $ = window.JQuery = function(id){  
+	//     // return new JQuerylite(id);  
+	//     return new JQuery.prototype.init(id);  
+	// }  
+	// JQuerylite = function(id){  
+	//     this.dom = document.getElementById(id);  
+	//     this.tagName = function(){  
+	//         alert(this.dom.tagName);  
+	//     }  
+	// }  
+
+	// JQuery.prototype = {  
+	//     init:function(id){  
+	//         this.dom = document.getElementById("dv");  
+	//         this.tagName = function(){  
+	//             return this.dom.tagName.toLowerCase();
+	//         };  
+	//         this.version = '1.71';  
+	//     },  
+	//     version:'1.7',  
+	//     name:'JQuery'  
+	// }  	
+	// JQuery.prototype.init.prototype = JQuery.prototype; 
+	// console.log($("dv").tagName());
+	// console.log($("dv").version);
+	// console.log($("dv").name);
+
+
+(function(){  
+	$ = window.JQuery = function(selector,context){  
+	    return new JQuery.prototype.init(selector,context);  
+	}  
+	JQuery.prototype = {  
+	    init:function(selector,context){  
+	        var selector = selector ? selector : document;  
+	        var context = context ? context : document;  
+	        var dom;  
+	        if(dom = context.getElementById(selector)){  
+	            this[0] = dom;  
+	            this.length = 1;  
+	        }else{  
+	            dom = context.getElementsByTagName(selector);  
+	            for(var i=0; i<dom.length; i++){  
+	                this[i] = dom[i];  
+	            }  
+	            this.length = dom.length;  
+	        }  
+	    },  
+	    version:'1.7',  
+	    size:function(){  
+	        return this.length;  
+	    }  
+	}  
+	JQuery.prototype.init.prototype = JQuery.prototype;  
+})();  
+
+console.log($("div").size());//3  
+console.log($("dv").size());//1 
+</script>
