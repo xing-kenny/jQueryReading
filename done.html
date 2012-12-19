@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>done</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+	
+	<script src="../../dist/jquery.js"></script>
+
+	<script type="text/javascript">
+	　　var wait = function(){
+	　　　　var dtd = $.Deferred(); //在函数内部，新建一个Deferred对象
+	　　　　var tasks = function(){
+	　　　　　　alert("执行完毕！");
+	// 　　　　　　dtd.resolve(); // 改变Deferred对象的执行状态
+				dtd.reject();
+	　　　　};
+	　　　　setTimeout(tasks,2000);
+	　　　　return dtd.promise(); // 返回promise对象
+			// return dtd;
+	　　};
+	;
+
+	function event1(){
+
+		var d = wait();
+	　　$.when(d)
+	　　.done(function(){ alert("哈哈，成功了！"); })
+	　　.fail(function(){ alert("出错啦！"); })
+	　　.fail(function(){ alert("出错啦2！"); })
+		;
+ 		// d.resolve(); //if return dtd ,then can change state out of the wait function
+
+	}
+	$(document).ready(function(){
+
+		$("#bt1").bind("click",event1);
+	});
+	</script>
+
+</head>
+	<div id="pool1" class = "pool1">
+			<input id="bt1" type="button" value="开始计时！" >
+	</div> 

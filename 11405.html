@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>＃11405</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+    
+    <script src="../../dist/jquery.js"></script>
+        <script type="text/javascript">
+
+
+        function log(s) { $('body').append(s + '<br/>'); }
+
+        function createPromise() {
+            var deferred = $.Deferred();
+
+            setTimeout(function() { deferred.notify(); }, 5000);
+            setTimeout(function() { deferred.resolve(); }, 10000);
+            return deferred.promise();
+        }
+
+        createPromise()
+            .done(function() {
+                    log("done");
+                })
+            .fail(function() {
+                    log("fail");
+            })
+            .progress(function(){
+                log("progress");
+                this.reject();  //"other code" interferes with deferred's internals
+            });
+
+        </script>
+</head>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>done</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+	
+	<script src="../../dist/jquery.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+			    $('.class1').replaceWith($('<span class="class1">Foo</span>'));
+			    $('.class3').replaceWith($('<span class="class1">Foo</span>'));
+			});
+
+		</script>
+</head>
+
+
+<p><b><u>Object replacement</u></b></h2>
+<p>Line1: <span class="class1">Hello World</span></p>
+<p>Line2: <span class="class1">This is a class</span></p>
+<p>Line3: <span class="class2">So is this</span></p>
+<p>Line4: <span class="class1">Replace me</span></p>
+<br />
+<p><b><u>String replacement</u></b></h2>
+<p>Line1: <span class="class3">String Hello World</span></p>
+<p>Line2: <span class="class3">String This is a class</span></p>
+<p>Line3: <span class="class4">String So is this</span></p>
+<p>Line4: <span class="class3">String Replace me</span></p>
+​

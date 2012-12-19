@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>.</title>
+  <script src="../../dist/jquery.js"></script>
+  <style id="hideStuff">
+    p { display: none; }
+    /* NOTE: Hiding iframes triggers the bug */
+    iframe { display: none; }
+  </style>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			// In the beginning all paragraphs are hidden.
+			// Showing p#foo should work - but doesn't.
+			// $('p#foo').hide().show();
+			var o = $('p#foo');
+			o.show();
+			o.hide();
+
+			// // Remove style#hideStuff className to reveal
+			// // the hidden things.
+			// $('style#hideStuff').remove();
+
+			// // but p#foo still remains hidden.
+			// // ...even if we try showing it again.
+			// $('p').show();
+
+			// // and even if we try toggling between hide and show
+			// $('p').hide().show();
+
+			// // Resetting the `style.display` property
+			// // will make it appear!
+			// $('p').css('display', '');
+			// // ...only to disappear again
+			// // next time we toggle its visibility
+			// $('p').hide().show();
+
+			// shigh...
+		});
+  	</script>
+
+</head>
+<body>
+
+  <p id="foo" style="display:none;">Can You See Me?</p>  
+  <p>The bug only affects Firefox with jQuery 1.8+</p>  
+  <B>I am 12904</B>
+
