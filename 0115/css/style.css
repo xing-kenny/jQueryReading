@@ -1,0 +1,23 @@
+html {
+   background-color:#000055;
+   background-image:url('images/__bg.png');
+   background-repeat:none;
+}
+body {
+	/*background: #fcfef4 url(images/bg.png) repeat-x top left;*/
+   font-family:Arial,Helvetica,sans-serif;
+   background-color:#550055;
+   height:600;
+	padding:10px;
+	margin:10px;
+}
+div{
+
+   background-color:yellow;
+   height:600;
+
+}
+a{
+		color:blue;
+		text-decoration:none;
+	}

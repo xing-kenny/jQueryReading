@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title> </title>
+
+    <script src="../lib/jquery-1.8.3.js"></script>
+    <script src="http://malsup.github.com/jquery.corner.js"></script>
+
+
+
+    <script type="text/javascript">
+
+        function log(s) { $('body').append(s + '<br/>'); }
+
+        $(document).ready(function(){
+
+            $("#ax" ).corner("round");
+            // $("#ax" ).hide();
+
+
+            log("the end!");  
+        });
+    </script>
+</head>
+<body>
+
+
+<table id="ax" border="2" bordercolor="#a0c6e5" style="border-collapse:collapse;">
+<tr><td style="border: solid 2px #a0c6e5;height:40px;">标题</td></tr>
+<tr><td style="border: solid 2px #a0c6e5;height:120px;">内容</td></tr>
+<tr><td style="border: solid 2px #a0c6e5;height:120px;">内容</td></tr>
+</table>
+
+<!-- 
+see:
+-->
+
+</body>
+

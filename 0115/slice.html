@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<title>jq.js</title>
+		<script src="jq5.js"></script>
+	</head>
+	<body id="body">
+		
+		<div id="a">A</div>  
+		<div id="b">B</div>  
+		<div id="c">C</div>  
+		<div id="d">D</div>
+
+		<script>  
+			console.log($('div').first() );
+			console.log($('div').last() );
+		</script>
+	</body>
+</html>
+
+<!--
+console.log( [].push );
+function push() { [native code] }
+console.log( Array.prototype.push );
+function push() { [native code] }
+console.log( Array.prototype.push === [].push );
+true
+
+see :
+http://snandy.iteye.com/blog/615168
+-->

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr" id="html">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用jquery循环map</title>
+
+    <script src="../lib/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+
+        function log(s) { $('body').append(s + '<br/>'); }
+
+        $(document).ready(function(){
+
+            //jQuery.each( collection, callback(indexInArray, valueOfElement) )
+            var map =   
+                {  
+                     地名: ["北京","天津","上海"],  
+                     民族: ["汉族","藏族","维吾尔族"]  
+                };  
+              
+            $.each(map,function(key,values){  
+                log(key);  
+                $(values).each(function(){  
+                    log("&nbsp;" + this);  
+                });  
+            });
+
+            // $(selector).each() 专用于jquery对象的遍历
+            $( "li" ).each(function( index ) {
+              log( index + ": " + $(this).text() );
+            });
+
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>foo</li>
+    <li>bar</li>
+</ul>
+</body>
+
+<!-- 
+see:
+http://snandy.iteye.com/blog/256931
+http://www.w3school.com.cn/jquery/traversing_each.asp
+http://blog.csdn.net/on_my_way20xx/article/details/7791769
+-->

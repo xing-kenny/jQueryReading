@@ -1,0 +1,28 @@
+    <script src="../lib/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+
+        function log(s) { $('body').append(s + '<br/>'); }
+
+		function Person(name,age){  
+
+			log( "typeof this = " +  ( typeof this) );
+			log( "this instanceof Person = " +  (this instanceof Person) );
+			if ( !(this instanceof Person ) ) 
+			{
+			   log( "new Person () " );
+		       return new Person(name,age);  
+		    }  
+		    this.name=name;  
+		    this.age=age;  
+		}  
+		Person.prototype={  
+		    setName : function(n){this.name=n;},  
+		    getName : function(){return this.name;}  
+		}  
+        $(document).ready(function(){
+			var p = Person('jack',25); 
+		});
+    </script>
+<!--
+see http://snandy.iteye.com/blog/635503
+-->    

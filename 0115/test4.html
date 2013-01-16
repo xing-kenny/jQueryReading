@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<title>jq.js</title>
+		<script src="jq2.js"></script>
+	</head>
+	<body id="body">
+		
+		<input id="tel"/>
+		
+		<script>  
+			$("body").hide();
+			$.getRealStyle();
+		</script>
+	</body>
+</html>
+
+<!--
+a，jQuery.extend({...})是给function jQuery添加静态属性或方法
+b，jQuery().extend({...})是给jquery对象添加属性或方法。
+
+console.log( $.extend );
+function (obj){
+	for(var a in obj)
+		this[a] = obj[a];
+}
+console.log( $.fn.extend );
+function (obj){
+	for(var a in obj)
+		this[a] = obj[a];
+}
+console.log( $.fn.extend === $.extend );
+true
+console.log( $.fn );
+Object {init: function, extend: function, hide: function}
+console.log( $ );
+function $(selector){
+	return new $.prototype.init(selector);
+}
+console.log( $.getRealStyle );
+function (el,styName){
+		return styName;
+}
+
+see :
+http://snandy.iteye.com/blog/566490
+-->

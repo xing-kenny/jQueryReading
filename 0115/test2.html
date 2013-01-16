@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+		<title>jq.js</title>
+	    <link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="jq.js"></script>
+	</head>
+	<body id="body" >
+	<div>	
+		<input id="tel"/>
+		&nbsp;&nbsp;
+		<a href="#">link</a>
+
+
+		<table border="1" bgcolor="#00FF00">
+		  <tr>
+		    <th>th1</th>
+		    <th>th2</th>
+		  </tr>
+		  <tr>
+		    <td>td1</td>
+		    <td>td2</td>
+		  </tr>
+		</table>
+
+	</div>	
+		&nbsp;&nbsp;the end!
+	</body>
+</html>
+		<script>
+			
+			var obj =$();
+			console.dir(obj)
+			$("body").attr("bgcolor","red").hide();
+
+		</script>
+<!--
+Problem with background color and Google Chrome,
+some compnents's bgcolor att be invalid in chrome.
+-->
