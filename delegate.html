@@ -1,0 +1,47 @@
+
+<body id="body">
+	<div id="qunit"></div>
+
+	<div id="qunit-fixture">
+		<div id="foo">
+			<p id="sndp">Everything inside the red border is inside a div with <code>id="foo"</code>.</p>
+
+		</div>
+	</div>
+</body>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+
+	var handler3 = function( event, data ) {
+		console.log("<<<<<<<<<<<<<<<<<<handler3");
+		console.dir(this);
+	};
+
+	jQuery("div").delegate("div", "acc", handler3);
+	jQuery("div").trigger("acc", 0);
+	jQuery("div").undelegate("div", "acc");
+
+    </script>
+
+<!-- 
+console output:
+<<<<<<<<<<<<<<<<<<handler3 delegate.html:17
+div#foo
+-->
+<!-- 
+For example, the following .delegate() code:	
+	$("table").delegate("td", "click", function() {
+	  $(this).toggleClass("chosen");
+	});
+
+is equivalent to the following code written using .on():
+
+	$("table").on("click", "td", function() {
+	  $(this).toggleClass("chosen");
+	});
+
+see:
+http://api.jquery.com/delegate/
+
+-->
